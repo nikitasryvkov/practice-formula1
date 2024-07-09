@@ -26,7 +26,6 @@ public class Contract extends BaseEntity {
   }
 
   @ManyToOne(fetch = FetchType.LAZY)
-  @JoinColumn(name = "pilot")
   public Pilot getPilot() {
     return pilot;
   }
@@ -36,7 +35,6 @@ public class Contract extends BaseEntity {
   }
 
   @ManyToOne(fetch = FetchType.LAZY)
-  @JoinColumn(name = "team")
   public Team getTeam() {
     return team;
   }

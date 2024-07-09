@@ -22,7 +22,6 @@ public class LicenseDistribution extends BaseEntity {
   }
 
   @ManyToOne(fetch = FetchType.LAZY)
-  @JoinColumn(name = "pilot")
   public Pilot getPilot() {
     return pilot;
   }
@@ -32,7 +31,6 @@ public class LicenseDistribution extends BaseEntity {
   }
 
   @ManyToOne(fetch = FetchType.LAZY)
-  @JoinColumn(name = "license")
   public License getLicense() {
     return license;
   }
