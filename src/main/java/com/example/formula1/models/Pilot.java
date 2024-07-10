@@ -25,7 +25,7 @@ public class Pilot extends BaseEntity {
   protected Pilot() {
   }
 
-  @JoinColumn(name = "first_name")
+  @Column(name = "first_name")
   public String getFirstName() {
     return firstName;
   }
@@ -34,7 +34,7 @@ public class Pilot extends BaseEntity {
     this.firstName = firstName;
   }
 
-  @JoinColumn(name = "last_name")
+  @Column(name = "last_name")
   public String getLastName() {
     return lastName;
   }
@@ -43,7 +43,7 @@ public class Pilot extends BaseEntity {
     this.lastName = lastName;
   }
 
-  @JoinColumn(name = "birth_day")
+  @Column(name = "birth_day")
   public Date getDateOfBirth() {
     return dateOfBirth;
   }
@@ -52,7 +52,7 @@ public class Pilot extends BaseEntity {
     this.dateOfBirth = dateOfBirth;
   }
 
-  @JoinColumn(name = "gender")
+  @Column(name = "gender")
   public String getGender() {
     return gender;
   }
@@ -61,7 +61,7 @@ public class Pilot extends BaseEntity {
     this.gender = gender;
   }
 
-  @JoinColumn(name = "country")
+  @Column(name = "country")
   public String getCountry() {
     return country;
   }

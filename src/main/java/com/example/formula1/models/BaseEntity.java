@@ -6,7 +6,7 @@ import jakarta.persistence.*;
 public class BaseEntity {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  @JoinColumn(name = "id")
+  @Column(name = "id")
   protected int id;
 
   public int getId() {

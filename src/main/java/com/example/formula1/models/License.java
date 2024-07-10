@@ -17,7 +17,7 @@ public class License extends BaseEntity {
   protected License() {
   }
 
-  @JoinColumn(name = "name")
+  @Column(name = "name")
   public String getName() {
     return name;
   }
@@ -26,7 +26,7 @@ public class License extends BaseEntity {
     this.name = name;
   }
 
-  @JoinColumn(name = "country")
+  @Column(name = "country")
   public String getType() {
     return type;
   }

@@ -26,6 +26,7 @@ public class Contract extends BaseEntity {
   }
 
   @ManyToOne(fetch = FetchType.LAZY)
+  @JoinColumn(name = "id_pilot", referencedColumnName = "id")
   public Pilot getPilot() {
     return pilot;
   }
@@ -35,6 +36,7 @@ public class Contract extends BaseEntity {
   }
 
   @ManyToOne(fetch = FetchType.LAZY)
+  @JoinColumn(name = "id_team", referencedColumnName = "id")
   public Team getTeam() {
     return team;
   }
@@ -43,7 +45,7 @@ public class Contract extends BaseEntity {
     this.team = team;
   }
 
-  @JoinColumn(name = "created_at")
+  @Column(name = "created_at")
   public Date createdAt() {
     return createdAt;
   }
@@ -52,7 +54,7 @@ public class Contract extends BaseEntity {
     this.createdAt = createdAt;
   }
 
-  @JoinColumn(name = "expires_at")
+  @Column(name = "expires_at")
   public Date expiresAt() {
     return expiresAt;
   }
@@ -61,7 +63,7 @@ public class Contract extends BaseEntity {
     this.expiresAt = expiresAt;
   }
 
-  @JoinColumn(name = "gender")
+  @Column(name = "gender")
   public String getPosition() {
     return position;
   }

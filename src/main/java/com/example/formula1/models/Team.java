@@ -21,7 +21,7 @@ public class Team extends BaseEntity {
   protected Team() {
   }
 
-  @JoinColumn(name = "name")
+  @Column(name = "name")
   public String getName() {
     return name;
   }
@@ -30,7 +30,7 @@ public class Team extends BaseEntity {
     this.name = name;
   }
 
-  @JoinColumn(name = "created_at")
+  @Column(name = "created_at")
   public Date getCreatedAt() {
     return createdAt;
   }
@@ -39,7 +39,7 @@ public class Team extends BaseEntity {
     this.createdAt = createdAt;
   }
 
-  @JoinColumn(name = "country")
+  @Column(name = "country")
   public String getCountry() {
     return country;
   }

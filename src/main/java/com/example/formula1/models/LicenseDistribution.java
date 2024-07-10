@@ -22,6 +22,7 @@ public class LicenseDistribution extends BaseEntity {
   }
 
   @ManyToOne(fetch = FetchType.LAZY)
+  @JoinColumn(name = "id_pilot", referencedColumnName = "id")
   public Pilot getPilot() {
     return pilot;
   }
@@ -31,6 +32,7 @@ public class LicenseDistribution extends BaseEntity {
   }
 
   @ManyToOne(fetch = FetchType.LAZY)
+  @JoinColumn(name = "id_license", referencedColumnName = "id")
   public License getLicense() {
     return license;
   }
@@ -39,7 +41,7 @@ public class LicenseDistribution extends BaseEntity {
     this.license = license;
   }
 
-  @JoinColumn(name = "created_at")
+  @Column(name = "created_at")
   public Date createdAt() {
     return createdAt;
   }
@@ -48,7 +50,7 @@ public class LicenseDistribution extends BaseEntity {
     this.createdAt = createdAt;
   }
 
-  @JoinColumn(name = "penalty_points")
+  @Column(name = "penalty_points")
   public int getPenaltyPoints() {
     return penaltyPoints;
   }
