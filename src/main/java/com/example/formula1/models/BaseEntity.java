@@ -4,11 +4,12 @@ import jakarta.persistence.*;
 
 @MappedSuperclass
 public abstract class BaseEntity {
+
+  protected int id;
+
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(name = "id")
-  protected int id;
-
   public int getId() {
       return id;
   }
