@@ -1,6 +1,7 @@
 package com.example.formula1.models;
 
 import java.util.Date;
+import java.util.Set;
 
 import jakarta.persistence.*;
 
@@ -13,6 +14,8 @@ public class Pilot extends BaseEntity {
   private Date dateOfBirth;
   private String gender;
   private String country;
+
+  private Set<Contract> contract;
 
   public Pilot(String firstName, String lastName, Date dateOfBirth, String gender, String country) {
     this.firstName = firstName;
@@ -68,5 +71,10 @@ public class Pilot extends BaseEntity {
 
   public void setCountry(String country) {
     this.country = country;
+  }
+
+  @OneToMany()
+  public Set<Contract> getContract() {
+    return contract;
   }
 }
