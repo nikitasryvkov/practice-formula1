@@ -4,6 +4,8 @@ import java.util.Date;
 
 import jakarta.persistence.*;
 
+@Entity
+@Table(name = "license_distribution")
 public class LicenseDistribution extends BaseEntity {
 
   private Pilot pilot;
