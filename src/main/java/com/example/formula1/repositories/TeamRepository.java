@@ -6,4 +6,6 @@ import com.example.formula1.models.Team;
 
 public interface TeamRepository extends JpaRepository<Team, Integer> {
 
+  public Team findById(int id);
+
 }
