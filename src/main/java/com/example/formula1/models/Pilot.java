@@ -12,12 +12,13 @@ public class Pilot extends BaseEntity {
   private String firstName;
   private String lastName;
   private Date dateOfBirth;
-  private String gender;
+  private Gender gender;
   private String country;
 
   private Set<Contract> contract;
+  private Set<LicenseDistribution> licenseDistributions;
 
-  public Pilot(String firstName, String lastName, Date dateOfBirth, String gender, String country) {
+  public Pilot(String firstName, String lastName, Date dateOfBirth, Gender gender, String country) {
     this.firstName = firstName;
     this.lastName = lastName;
     this.dateOfBirth = dateOfBirth;
@@ -28,7 +29,7 @@ public class Pilot extends BaseEntity {
   protected Pilot() {
   }
 
-  @Column(name = "first_name")
+  @Column(name = "first_name", length = 255, nullable = false)
   public String getFirstName() {
     return firstName;
   }
@@ -37,7 +38,7 @@ public class Pilot extends BaseEntity {
     this.firstName = firstName;
   }
 
-  @Column(name = "last_name")
+  @Column(name = "last_name", length = 255, nullable = false)
   public String getLastName() {
     return lastName;
   }
@@ -46,7 +47,7 @@ public class Pilot extends BaseEntity {
     this.lastName = lastName;
   }
 
-  @Column(name = "birth_day")
+  @Column(name = "birth_day", nullable = false)
   public Date getDateOfBirth() {
     return dateOfBirth;
   }
@@ -55,16 +56,16 @@ public class Pilot extends BaseEntity {
     this.dateOfBirth = dateOfBirth;
   }
 
-  @Column(name = "gender")
-  public String getGender() {
+  @Column(name = "gender", nullable = false)
+  public Gender getGender() {
     return gender;
   }
 
-  public void setGender(String gender) {
+  public void setGender(Gender gender) {
     this.gender = gender;
   }
 
-  @Column(name = "country")
+  @Column(name = "country", length = 255, nullable = false)
   public String getCountry() {
     return country;
   }
@@ -73,8 +74,31 @@ public class Pilot extends BaseEntity {
     this.country = country;
   }
 
-  @OneToMany()
+  @OneToMany(mappedBy = "pilot")
   public Set<Contract> getContract() {
     return contract;
   }
+
+  public void setContract(Set<Contract> contract) {
+    this.contract = contract;
+  }
+
+  @OneToMany(mappedBy = "pilot")
+  public Set<LicenseDistribution> getLicenseDistributions() {
+    return licenseDistributions;
+  }
+
+  public void setLicenseDistributions(Set<LicenseDistribution> licenseDistributions) {
+    this.licenseDistributions = licenseDistributions;
+  }
+
+  @Override
+    public String toString() {
+        return "Pilot{" +
+                "id='" + getId() + '\'' +
+                ",first_name=" + firstName +
+                ", lastName='" + lastName + '\'' +
+                '}';
+    }
+
 }

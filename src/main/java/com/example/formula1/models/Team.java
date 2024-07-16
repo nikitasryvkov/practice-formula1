@@ -1,6 +1,7 @@
 package com.example.formula1.models;
 
 import java.util.Date;
+import java.util.Set;
 
 import jakarta.persistence.*;
 
@@ -12,6 +13,8 @@ public class Team extends BaseEntity {
   private Date createdAt;
   private String country;
 
+  private Set<Contract> contract;
+
   public Team(String name, Date createdAt, String country) {
     this.name = name;
     this.createdAt = createdAt;
@@ -21,7 +24,7 @@ public class Team extends BaseEntity {
   protected Team() {
   }
 
-  @Column(name = "name")
+  @Column(name = "name", length = 255, nullable = false)
   public String getName() {
     return name;
   }
@@ -30,7 +33,7 @@ public class Team extends BaseEntity {
     this.name = name;
   }
 
-  @Column(name = "created_at")
+  @Column(name = "created_at", nullable = false)
   public Date getCreatedAt() {
     return createdAt;
   }
@@ -39,12 +42,21 @@ public class Team extends BaseEntity {
     this.createdAt = createdAt;
   }
 
-  @Column(name = "country")
+  @Column(name = "country", length = 255, nullable = false)
   public String getCountry() {
     return country;
   }
 
   public void setCountry(String country) {
     this.country = country;
+  }
+
+  @OneToMany(mappedBy = "team")
+  public Set<Contract> getContract() {
+    return contract;
+  }
+
+  public void setContract(Set<Contract> contract) {
+    this.contract = contract;
   }
 }

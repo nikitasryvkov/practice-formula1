@@ -3,13 +3,13 @@ package com.example.formula1.models;
 import jakarta.persistence.*;
 
 @MappedSuperclass
-public abstract class BaseEntity {
+public class BaseEntity {
 
   protected int id;
 
   @Id
+  @Column(name = "id", nullable = false)
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  @Column(name = "id")
   public int getId() {
       return id;
   }
